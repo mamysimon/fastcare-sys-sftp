@@ -32,45 +32,11 @@
         <logger level="INFO" doc:name="End" doc:id="11455ec0-6264-4825-9ad2-7512e8a87761" category="${app.name}" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;    step: vars.metadata.endStep,&#xA;    data: {&#xA;        business: {},&#xA;        technical: payload - &quot;data&quot;&#xA;    }&#xA;}]" />
     </flow>
     <flow name="get:\laboratory\results\(patientId):sys-sftp-api-config">
-        <ee:transform doc:name="Transform Message">
-            <ee:variables>
-                <ee:set-variable variableName="patientId">attributes.uriParams.'patientId'</ee:set-variable>
-            </ee:variables>
-        </ee:transform>
-        <ee:transform doc:name="Transform Message">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  correlationId: "fe5zef1-194b-475c-8dee-0zef56zf4180",
-  statusCode: 500,
-  namespace: "APIKIT",
-  identifier: "INTERNAL_SERVER_ERROR",
-  description: "Something went wrong"
-} as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+        <set-variable value="#[attributes.uriParams.patientId]" doc:name="[patientId]" doc:id="cfbc5cec-0460-47a0-a5c3-2e67b243af03" variableName="patientId"/>
+		<flow-ref doc:name="sub-get-laboratory-results" doc:id="d25e2043-eedc-4abd-b903-7bc71c43146c" name="sub-get-laboratory-results"/>
     </flow>
     <flow name="get:\radiology\results\(patientId):sys-sftp-api-config">
-        <ee:transform doc:name="Transform Message">
-            <ee:variables>
-                <ee:set-variable variableName="patientId">attributes.uriParams.'patientId'</ee:set-variable>
-            </ee:variables>
-        </ee:transform>
-        <ee:transform doc:name="Transform Message">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  correlationId: "fe5zef1-194b-475c-8dee-0zef56zf4180",
-  statusCode: 500,
-  namespace: "APIKIT",
-  identifier: "INTERNAL_SERVER_ERROR",
-  description: "Something went wrong"
-} as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+		<set-variable value="#[attributes.uriParams.patientId]" doc:name="[patientId]" doc:id="246a69a6-991b-4369-8a23-57ffb1ba2699" variableName="patientId" />
+		<flow-ref doc:name="sub-get-radiology-results" doc:id="38aecc42-6a1d-4228-b3d1-c32468a4d44b" name="sub-get-radiology-results"/>
     </flow>
 </mule>
