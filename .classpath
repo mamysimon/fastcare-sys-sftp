@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-sftp-connector/2.6.4"/>
 	<classpathentry kind="con" path="org.mule.tooling.API_SPEC_LIB/43c948fb-024c-4176-a702-879840dedb82/sftp-system-api/1.0.3"/>
 	<classpathentry kind="con" path="MULE_LIB/org.mule.connectors/mule-sockets-connector/1.2.7"/>
 	<classpathentry kind="con" path="org.mule.tooling.API_SPEC_LIB/43c948fb-024c-4176-a702-879840dedb82/paradiso-library/1.0.0"/>
