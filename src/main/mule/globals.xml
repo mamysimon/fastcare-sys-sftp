@@ -51,11 +51,6 @@ http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sft
 		<logger level="ERROR" doc:name="ERROR" doc:id="a0833285-47dc-4907-a6cb-34855ee4c7dd" message='#[{&#10;	step: "Global error handler",&#10;	data: {&#10;		business: {},&#10;		technical: payload&#10;	}&#10;}]' category="${app.name}"/>
 	</sub-flow>
 	<error-handler name="globalsError_Handler" doc:id="4e6c82c1-1022-4ce4-a607-fcd5f16f1aa5" >
-		<!-- [STUDIO:"custom error"]<on-error-propagate enableNotifications="true" logException="true" doc:name="custom error" doc:id="caf48a9d-1676-4070-90f5-0037e83c959f" type="CUSTOM:ERROR">
-			<set-variable value="Set custom description here" doc:name="[description&#93;" doc:id="9f3795ff-423b-4099-90eb-0d90bbc59ab6" variableName="description"/>
-			<set-variable value="999" doc:name="[httpStatus&#93;" doc:id="a7cf9546-fdce-457e-ac00-43491bf349e8" variableName="httpStatus"/>
-			<flow-ref doc:name="genericError" doc:id="fbd47efc-711d-4dbe-8f51-2ea757bdf377" name="genericError"/>
-		</on-error-propagate> [STUDIO] -->
 		<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="1647bce7-4967-4420-bb1b-91170148787d">
 			<flow-ref doc:name="genericError" doc:id="71506bee-a65b-44f6-9761-ed1c88dbc8cd" name="genericError" />
 		</on-error-propagate>
