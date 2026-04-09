@@ -1,14 +1,14 @@
 ################################
 # API Manager
-autodiscoveryId: "000000"
+autodiscoveryId: "20836052"
 
 # Listener
 https:
-  port: "8081"
+  port: "443"
 ################################
 
 sftp:
   host: "fastcare.couchdrop.io"
   port: "22"
-  user: "hostpital"
+  user: "hospital"
   working-directory: "prod"
