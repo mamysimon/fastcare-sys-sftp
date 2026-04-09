@@ -10,5 +10,5 @@ https:
 sftp:
   host: "fastcare.couchdrop.io"
   port: "22"
-  user: "hostpital"
+  user: "hospital"
   working-directory: "dev"
